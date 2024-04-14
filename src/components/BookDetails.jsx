@@ -11,10 +11,10 @@ export const BookDetails = () => {
     const fetchBookDetails = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes/${bookId}`
+          `https://www.googleapis.com/books/v1/volumes/${bookId}`,
         );
         const data = await response.json();
-        setBook(data.volumeInfo);
+        setBook(data);
       } catch (error) {
         console.error("Error fatching data:", error);
       }
@@ -28,11 +28,11 @@ export const BookDetails = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  };
 
-    const handleAddToShelf = () => {
-      console.log("本を本棚に追加しました", selectedBook);
-      history.push("/MyBooksShelf");
-    };
+  const handleAddToShelf = () => {
+    console.log("本を本棚に追加しました");
+    history.push("/MyBooksShelf");
   };
 
   if (!book) {
@@ -42,17 +42,15 @@ export const BookDetails = () => {
   return (
     <div>
       <h1>本の登録</h1>
-      <Link to="/MyBooksShelf">Back to list</Link>
+      {/* <Link to="/MyBooksShelf">Back to list</Link> */}
       <div>
-        <strong>{book.volumeInfo.title}</strong>
+        <strong>{book.title}</strong>
         <br />
-        {book.volumeInfo.author && (
-          <span>Author: {book.volumeInfo.author}</span>
-        )}
+        {book.author && <span>Author: {book.author}</span>}
         <br />
-        <img src={book.volumeInfo.image} alt={book.volumeInfo.title} />
+        <img src={book.image} alt={book.title} />
       </div>
-      <p>{book.volumeInfo.description}</p>
+      <p>{book.description}</p>
       <form onSubmit={handleSubmit}>
         <textarea
           placeholder="感想を記入してください"
