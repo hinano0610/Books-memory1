@@ -11,7 +11,7 @@ export const BookDetails = () => {
     const fetchBookDetails = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes/${bookId}`
+          `https://www.googleapis.com/books/v1/volumes/${bookId}`,
         );
         const data = await response.json();
         setBook(data.volumeInfo);
@@ -29,11 +29,10 @@ export const BookDetails = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-  
-    const handleAddToShelf = () => {
-      console.log("本を本棚に追加しました", selectedBook);
-      history.push("/MyBooksShelf");
-    };
+
+  const handleAddToShelf = () => {
+    console.log("本を本棚に追加しました", selectedBook);
+    history.push("/MyBooksShelf");
   };
 
   if (!book) {

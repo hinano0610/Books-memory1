@@ -27,7 +27,8 @@ function App() {
         <Route path="/SearchBooks">
           <SearchBooks />
         </Route>
-        <Route path={"/book/:bookId"} element={<BookDetails />} />
+        <Route path={"/book/${book.id}"} />
+        <BookDetails />
       </Switch>
     </BrowserRouter>
   );
