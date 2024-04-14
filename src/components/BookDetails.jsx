@@ -28,7 +28,8 @@ export const BookDetails = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  };
+  
     const handleAddToShelf = () => {
       console.log("本を本棚に追加しました", selectedBook);
       history.push("/MyBooksShelf");
