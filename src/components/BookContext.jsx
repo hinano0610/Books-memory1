@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-
 const BookContext = createContext();
 
 export const BookProvider = ({ children }) => {
@@ -10,7 +9,7 @@ export const BookProvider = ({ children }) => {
   };
 
   return (
-    <BookContext.Provider value={{ ...apiData, saveApiData }}>
+    <BookContext.Provider value={{ apiData, saveApiData }}>
       {children}
     </BookContext.Provider>
   );
