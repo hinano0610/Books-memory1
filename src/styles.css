@@ -1,4 +1,81 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.App a {
+  color: black;
+  text-decoration: none;
+  font-size: large;
+  margin: 0 20px;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+.Search {
+  font-family: sans-serif;
+}
+
+.bookName {
+  display: flex;
+  justify-content: center;
+}
+
+.searchtitle {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  background-color: bisque;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+li img {
+  margin-right: 10px;
+}
+
+.book-conteiner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-image {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.book-title {
+  margin-bottom: 20px;
+}
+
+.book-note {
+  font-style: italic;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 縦方向の中央揃え */
+  align-items: center; /* 横方向の中央揃え */
+  height: 70vh; /* 画面の高さいっぱいに広がるように */
+}
+.textarea {
+  height: 100px;
+  width: 100%;
+  background-color: beige;
 }
